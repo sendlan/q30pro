@@ -150,6 +150,8 @@ jobs:
           cd ./wrt/
 
           ./scripts/feeds update -a
+          rm -rf feeds/packages/net/mwan3
+          cp -r $GITHUB_WORKSPACE/mwan3 feeds/packages/net
           ./scripts/feeds install -a
 
       - name: Custom Packages
