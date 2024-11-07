@@ -152,6 +152,10 @@ jobs:
           ./scripts/feeds update -a
           rm -rf feeds/packages/net/mwan3
           cp -r $GITHUB_WORKSPACE/mwan3 feeds/packages/net
+          rm -rf feeds/packages/lang/golang
+          git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+          rm -rf feeds/packages/net/v2ray-geodata
+          git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
           ./scripts/feeds install -a
 
       - name: Custom Packages
